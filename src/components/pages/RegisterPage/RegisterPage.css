@@ -1,0 +1,24 @@
+.register-page {
+  height: 94vh;
+  width: 100vw;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.register-form {
+  width: 40vw;
+  padding: 40px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.register-form .mb-3 {
+  text-align: left;
+  padding-bottom: 10px;
+}
