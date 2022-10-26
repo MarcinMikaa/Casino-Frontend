@@ -58,6 +58,14 @@ function RegisterPage() {
     }).then((res) => {
       setAction(res.data.message);
       if (res.data.message === "User Created") {
+        axios({
+          method: "POST",
+          data: {
+            id: res.data.user._id,
+          },
+          withCredentials: true,
+          url: "http://localhost:4000/user/balance",
+        });
         setAction("");
         navigate("/login");
       }
