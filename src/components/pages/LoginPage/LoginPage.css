@@ -1,0 +1,92 @@
+.login-panel{
+    margin: auto;
+    width: 75%;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    margin-top: 100px;
+}
+
+.login-panel .form-floating {
+    width: 80%;
+    color: #D9AC84;
+}
+
+.login-panel .form-floating .login-input{
+    margin: 10px 0px 10px;
+    padding: 2.5px 1px 2.5px;
+    padding-left: 10px;
+    border: solid #D9AC84 1.5px;
+    border-radius: 10px;
+    color: #D9AC84;
+    background-color: #1D1E26;
+}
+
+.login-panel .login-form .login-button{
+    margin: 25px 0px 10px;
+    padding: 10px 50px 10px;
+    color: #D9AC84;
+    background-color: #1D1E26;
+    border: solid #D9AC84 1.5px;
+}
+
+.login-panel .login-form .login-button:active{
+    background-color: #D9AC84;
+    color: #1D1E26;
+    border: solid #1D1E26 1.5px;
+}
+
+.login-button{
+    padding: 15px 25px 15px;
+    border-radius: 10px;
+    border: solid #D9AC84 3.5px;
+    background-color: #1D1E26;
+    color: #D9AC84;
+}
+
+.login-form h3{
+    color: #1D1E26;
+}
+
+.login-panel .form-floating .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #D9AC84;
+    opacity: 1; /* Firefox */
+}
+
+.login-panel .form-floating .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #D9AC84;
+}
+
+.login-panel .form-floating .form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: #D9AC84;
+}
+
+.login-panel .form-floating .form-control:focus{
+    border-color: #1D1E26;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6)
+} 
+
+.login-panel .alert-message{
+    background-color: #1D1E26;
+    color: #BF3B53;
+    border: 1px solid #BF3B53;
+    width: 50%;
+    margin: auto;;
+}
+
+.login-panel .alert-message button{
+    background-color: #BF3B53;
+    border: none;
+    color: #1D1E26;
+}
+
+.login-panel .alert-message button:active{
+    background-color: #1D1E26;
+    border: 1px solid #BF3B53;
+    color: #BF3B53;
+}
