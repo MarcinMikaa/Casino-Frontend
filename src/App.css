@@ -2,19 +2,18 @@
   text-align: center;
   height: 100vh;
   background-image: linear-gradient(
-  25deg,
-  hsl(28deg 53% 68%) 0%,
-  hsl(28deg 35% 60%) 20%,
-  hsl(27deg 23% 49%) 32%,
-  hsl(26deg 20% 36%) 47%,
-  hsl(233deg 13% 13%) 100%
+    25deg,
+    hsl(28deg 53% 68%) 0%,
+    hsl(28deg 35% 60%) 20%,
+    hsl(27deg 23% 49%) 32%,
+    hsl(26deg 20% 36%) 47%,
+    hsl(233deg 13% 13%) 100%
   );
 }
 
 .auth-page {
   height: 94vh;
   width: 100%;
-  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,9 +22,9 @@
 .auth-form {
   width: 40vw;
   padding: 40px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(82, 60, 22);
   border-radius: 15px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(151, 151, 151);
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
@@ -50,4 +49,18 @@
 .auth-form .submit-group p {
   height: 30px;
   color: red;
+}
+
+.form-floating {
+  text-align: left;
+  margin-bottom: 9px !important;
+}
+
+.form-floating .text-error {
+  margin-left: 10px;
+  color: red;
+}
+
+.mb-3 .form-control {
+  border-radius: 10px;
 }
