@@ -20,9 +20,9 @@
 .login-panel .form-floating .login-input{
     margin: 10px 0px 10px;
     padding: 2.5px 1px 2.5px;
+    padding-left: 10px;
     border: solid #D9AC84 1.5px;
     border-radius: 10px;
-    text-align: center;
     color: #D9AC84;
     background-color: #1D1E26;
 }

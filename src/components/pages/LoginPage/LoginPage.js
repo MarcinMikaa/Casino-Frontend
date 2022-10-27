@@ -51,11 +51,11 @@ const LoginPage = () => {
       })}>
         <h3>Sign in</h3>
         <FloatingLabel controlId="floatingInput" label="Enter email" className="mb-3">
-          <Form.Control className="login-input" {...register("email", loginOptions.email)} type="email" placeholder="Email"/>
+          <Form.Control className="login-input" {...register("email", loginOptions.email)} type="email" placeholder=" "/>
           <ErrorMessage errors={errors} name="email" />
         </FloatingLabel>
         <FloatingLabel controlId="floatingPassword" label="Enter Password">
-          <Form.Control className="login-input" {...register("password", loginOptions.password)} type="password" placeholder="Password" />
+          <Form.Control className="login-input" {...register("password", loginOptions.password)} type="password"  placeholder=" "/>
           <ErrorMessage errors={errors} name="password" />
         </FloatingLabel>
         <Button type="submit" className="login-button">Sign in</Button>
