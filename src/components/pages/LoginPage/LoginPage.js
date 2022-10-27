@@ -13,7 +13,7 @@ const LoginPage = () => {
   const [alertVisibility, setAlertVisibility] = useState(false)
   const navigate = useNavigate();
 
-  const registerOptions = {
+  const loginOptions = {
     email: {
       required: "Email address is required",
       type: "email",
@@ -37,7 +37,7 @@ const LoginPage = () => {
       }else{
         navigate("/")
       }
-      
+
     });
   };
   
@@ -51,11 +51,11 @@ const LoginPage = () => {
       })}>
         <h3>Sign in</h3>
         <FloatingLabel controlId="floatingInput" label="Enter email" className="mb-3">
-          <Form.Control className="login-input" {...register("email", registerOptions.email)} type="email" placeholder="Email"/>
+          <Form.Control className="login-input" {...register("email", loginOptions.email)} type="email" placeholder="Email"/>
           <ErrorMessage errors={errors} name="email" />
         </FloatingLabel>
         <FloatingLabel controlId="floatingPassword" label="Enter Password">
-          <Form.Control className="login-input" {...register("password", registerOptions.password)} type="password" placeholder="Password" />
+          <Form.Control className="login-input" {...register("password", loginOptions.password)} type="password" placeholder="Password" />
           <ErrorMessage errors={errors} name="password" />
         </FloatingLabel>
         <Button type="submit" className="login-button">Sing in</Button>
