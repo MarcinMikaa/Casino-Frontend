@@ -58,7 +58,7 @@ const LoginPage = () => {
           <Form.Control className="login-input" {...register("password", loginOptions.password)} type="password" placeholder="Password" />
           <ErrorMessage errors={errors} name="password" />
         </FloatingLabel>
-        <Button type="submit" className="login-button">Sing in</Button>
+        <Button type="submit" className="login-button">Sign in</Button>
       </Form>
       {alertVisibility ? 
         <Alert className="alert-message">
