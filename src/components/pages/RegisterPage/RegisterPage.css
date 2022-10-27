@@ -1,0 +1,16 @@
+
+.form-floating {
+  text-align: left;
+  margin-bottom: 9px !important;
+}
+
+.form-floating .text-error {
+  margin-left: 10px;
+  color: red;
+}
+
+.mb-3 .form-control {
+  border-radius: 10px;
+}
+
+
