@@ -19,21 +19,16 @@ function RegisterPage() {
 
   const registerOptions = {
     name: { required: "What's your name?" },
-
     surname: { required: "What's your surname?" },
-
     email: {
       required: "Email address is required",
       type: "email",
     },
-
     password: { required: "Password is required" },
-
     repeatPassword: {
       required: "Repeat your password",
       validate: (value) => value === password.current || "The passwords don't match",
     },
-
     age: {
       required: "Enter your age",
       min: {
@@ -56,16 +51,9 @@ function RegisterPage() {
       withCredentials: true,
       url: "http://localhost:4000/user",
     }).then((res) => {
+      console.log(res);
       setAction(res.data.message);
       if (res.data.message === "User Created") {
-        axios({
-          method: "POST",
-          data: {
-            id: res.data.user._id,
-          },
-          withCredentials: true,
-          url: "http://localhost:4000/user/balance",
-        });
         setAction("");
         navigate("/login");
       }
@@ -74,8 +62,8 @@ function RegisterPage() {
   const handleError = (errors) => {};
 
   return (
-    <div className="register-page">
-      <Form className="register-form" onSubmit={handleSubmit(onSubmit, handleError)}>
+    <div className="auth-page">
+      <Form className="auth-form" onSubmit={handleSubmit(onSubmit, handleError)}>
         <h2>CREATE AN ACCOUNT</h2>
         <br />
         <Row className="g-2">
