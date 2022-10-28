@@ -21,7 +21,6 @@ function Navabr() {
     }).then((res) => {
       localStorage.clear();
       navigate("/");
-      window.location.reload();
     });
   };
 
@@ -39,7 +38,7 @@ function Navabr() {
                   <NavDropdown title={navbarDropdownTitle} id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/account">Account Settings</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/financial">
-                      Buy dollars
+                      Buy credits
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={logout}>
