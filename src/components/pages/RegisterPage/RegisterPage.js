@@ -7,7 +7,7 @@ import axios from "axios";
 
 function RegisterPage() {
   const navigate = useNavigate();
-  const [action, setAction] = useState("");
+  const [message, setMessage] = useState("");
   const {
     register,
     handleSubmit,
@@ -25,8 +25,8 @@ function RegisterPage() {
       type: "email",
     },
     password: { required: "Password is required" },
-    repeatPassword: {
-      required: "Repeat your password",
+    confirmPassword: {
+      required: "Confirm your password",
       validate: (value) => value === password.current || "The passwords don't match",
     },
     age: {
@@ -51,10 +51,9 @@ function RegisterPage() {
       withCredentials: true,
       url: "http://localhost:4000/user",
     }).then((res) => {
-      console.log(res);
-      setAction(res.data.message);
+      setMessage(res.data.message);
       if (res.data.message === "User Created") {
-        setAction("");
+        setMessage("");
         navigate("/login");
       }
     });
@@ -64,25 +63,42 @@ function RegisterPage() {
   return (
     <div className="auth-page">
       <Form className="auth-form" onSubmit={handleSubmit(onSubmit, handleError)}>
-        <h2>CREATE AN ACCOUNT</h2>
+        <h1>
+          Create your account<span>.</span>
+        </h1>
         <br />
         <Row className="g-2">
           <Col md>
             <FloatingLabel controlId="floatingInputName" label="Name" className="mb-3">
-              <Form.Control type="text" placeholder="Enter name" {...register("name", registerOptions.name)} />
+              <Form.Control
+                type="text"
+                placeholder="Enter name"
+                className="auth-input"
+                {...register("name", registerOptions.name)}
+              />
               <small className="text-error">{errors?.name && errors.name.message}</small>
             </FloatingLabel>
           </Col>
 
           <Col md>
             <FloatingLabel controlId="floatingInputSurname" label="Surname" className="mb-3">
-              <Form.Control type="text" placeholder="Enter surname" {...register("surname", registerOptions.surname)} />
+              <Form.Control
+                type="text"
+                placeholder="Enter surname"
+                className="auth-input"
+                {...register("surname", registerOptions.surname)}
+              />
               <small className="text-error">{errors?.surname && errors.surname.message}</small>
             </FloatingLabel>
           </Col>
         </Row>
         <FloatingLabel controlId="floatingInputEmail" label="Email Address" className="mb-3">
-          <Form.Control type="email" placeholder="Enter email" {...register("email", registerOptions.email)} />
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            className="auth-input"
+            {...register("email", registerOptions.email)}
+          />
           <small className="text-error">{errors?.email && errors.email.message}</small>
         </FloatingLabel>
         <Row className="g-2">
@@ -91,6 +107,7 @@ function RegisterPage() {
               <Form.Control
                 type="password"
                 placeholder="Password"
+                className="auth-input"
                 {...register("password", registerOptions.password)}
               />
               <small className="text-error">{errors?.password && errors.password.message}</small>
@@ -98,29 +115,35 @@ function RegisterPage() {
           </Col>
 
           <Col md>
-            <FloatingLabel controlId="floatingInputRepeatPassword" label="Repeat Password" className="mb-3">
+            <FloatingLabel controlId="floatingInputConfirmPassword" label="Confirm Password" className="mb-3">
               <Form.Control
                 type="password"
-                placeholder="Repeat password"
-                {...register("repeatPassword", registerOptions.repeatPassword)}
+                placeholder="Confirm password"
+                className="auth-input"
+                {...register("confirmPassword", registerOptions.confirmPassword)}
               />
-              <small className="text-error">{errors?.repeatPassword && errors.repeatPassword.message}</small>
+              <small className="text-error">{errors?.confirmPassword && errors.confirmPassword.message}</small>
             </FloatingLabel>
           </Col>
         </Row>
         <FloatingLabel controlId="floatingInputAge" label="Age" className="mb-3">
-          <Form.Control type="number" placeholder="Age" {...register("age", registerOptions.age)} />
+          <Form.Control
+            type="number"
+            placeholder="Age"
+            className="auth-input"
+            {...register("age", registerOptions.age)}
+          />
           <small className="text-error">{errors?.age && errors.age.message}</small>
         </FloatingLabel>
         <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
-          {action === "User with given E-mail already exists" ? <p>User with given Email already exists</p> : <p> </p>}
-          <Button variant="primary" type="submit" className="register-button">
-            CONTINUE
+          {message === "" ? <p></p> : <p>{message}</p>}
+          <Button variant="primary" type="submit" className="auth-button">
+            Create
           </Button>
         </Form.Group>
         <Form.Text className="text-muted">Already have an account? </Form.Text>
         <Form.Text className="text-primary" as={Link} to="/login">
-          <b>Login here</b>
+          <b>Log in</b>
         </Form.Text>
       </Form>
     </div>
