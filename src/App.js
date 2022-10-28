@@ -5,6 +5,8 @@ import MainPage from "./components/pages/MainPage/MainPage";
 import GamesPage from "./components/pages/GamesPage/GamesPage";
 import RegisterPage from "./components/pages/RegisterPage/RegisterPage";
 import LoginPage from "./components/pages/LoginPage/LoginPage";
+import AccountSettingPage from "./components/pages/AccountSettingPage/AccountSettingPage";
+import FinancialPage from "./components/pages/FinancialPage/FinancialPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route path="/games" element={<GamesPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/account" element={<AccountSettingPage />} />
+          <Route path="/financial" element={<FinancialPage />} />
         </Routes>
       </div>
     </Router>
