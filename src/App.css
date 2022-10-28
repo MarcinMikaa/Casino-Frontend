@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
   background-image: linear-gradient(
     25deg,
     hsl(28deg 53% 68%) 0%,
@@ -12,43 +14,118 @@
 }
 
 .auth-page {
+  width: 100vw;
   height: 94vh;
-  width: 100%;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99)), url("./images/auth-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .auth-form {
-  width: 40vw;
-  padding: 40px;
-  border: 1px solid rgb(82, 60, 22);
+  width: 100%;
+  max-width: 600px;
+  min-height: 500px;
+  padding: 40px 100px;
+  border: 2px solid rgb(31, 31, 31);
   border-radius: 15px;
-  background-color: rgb(151, 151, 151);
+  background-color: rgb(31, 31, 31);
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
-.auth-form .mb-3 .btn {
-  padding: 15px;
-  width: 200px;
+.auth-form .form-floating .auth-input {
+  padding-left: 10px;
+  border: none;
+  border-radius: 10px;
+  border-bottom: 2px solid white;
+  color: white;
+  background-color: rgb(44, 44, 44);
+}
+
+.auth-form .form-floating .form-control:focus {
+  background-color: rgb(44, 44, 44);
+  border-color: #1d1e26;
+  border: 1px solid rgb(71, 71, 71);
+  border-bottom: 2px solid white;
+  box-shadow: none;
+}
+
+.auth-form .form-floating {
+  margin: 0, 20px;
+  color: #d9ac84;
+}
+
+.auth-form .btn {
+  width: 100%;
+  max-width: 200px;
+  padding: 13px 0;
   border-radius: 15px;
-  background-color: rgb(42, 42, 255);
-  border: 1px solid rgb(42, 42, 255);
+  font-size: x-large;
+  background-color: #bd9471;
+  border: 1px solid #bd9471;
   color: rgb(255, 255, 255);
-  box-shadow: 0 0 4px blue;
+  box-shadow: 0 0 4px #bd9471;
   font-weight: 500;
+  --bs-btn-active-bg: #ac8868;
+  --bs-btn-active-border-color: #ac8868;
+  transition: width 0.4s, background-color 0.4s;
 }
 
-.auth-form .mb-3 .btn:hover {
-  background-color: blue;
-  border: 1px solid rgb(40, 44, 255);
-  box-shadow: 0 0 15px rgb(26, 41, 255);
+.auth-form .btn:hover {
+  width: 55%;
+  background-color: #ac8868;
+  border: 1px solid #ac8868;
+  box-shadow: 0 0 8px #ac8868;
+}
+
+.auth-form .btn:active {
+  background-color: #ac8868;
+  border: 1px solid #ac8868;
+  box-shadow: 0 0 8px #ac8868;
+}
+
+.auth-form .form-control {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
+
+.auth-form .form-control input {
+  color: white;
 }
 
 .auth-form .submit-group p {
-  height: 30px;
+  padding: 15px 0;
+  margin: 0;
   color: red;
+}
+
+.auth-form h1 {
+  color: rgb(255, 255, 255);
+}
+
+.auth-form h1 span {
+  color: #d9ac84;
+}
+
+.auth-page a {
+  text-decoration: none;
+}
+
+.auth-form .text-muted {
+  color: white;
+}
+
+.auth-form .text-primary b {
+  text-decoration: none;
+  color: #d9ac84;
 }
 
 .form-floating {
@@ -59,8 +136,4 @@
 .form-floating .text-error {
   margin-left: 10px;
   color: red;
-}
-
-.mb-3 .form-control {
-  border-radius: 10px;
 }

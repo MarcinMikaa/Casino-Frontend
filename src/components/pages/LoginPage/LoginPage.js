@@ -1,8 +1,8 @@
 import "./LoginPage.css";
 import { useForm } from "react-hook-form";
-import { Form, Button, FloatingLabel, Alert } from "react-bootstrap";
+import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const LoginPage = () => {
@@ -12,7 +12,6 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
   const [message, setMessage] = useState("");
-  const [alertVisibility, setAlertVisibility] = useState(false);
   const navigate = useNavigate();
 
   const loginOptions = {
@@ -33,9 +32,9 @@ const LoginPage = () => {
       withCredentials: true,
       url: "http://localhost:4000/user/login",
     }).then((res) => {
+      setMessage(res.data);
       if (res.data === "No User Exist") {
         setMessage(res.data);
-        setAlertVisibility(true);
       } else {
         localStorage.setItem("user", JSON.stringify(res.data));
         navigate("/");
@@ -46,45 +45,47 @@ const LoginPage = () => {
   const handleError = (errors) => {};
 
   return (
-    <div className="login-panel auth-page">
+    <div className="auth-page">
       <Form
-        className="login-form auth-form"
+        className="auth-form"
         onSubmit={handleSubmit((data) => {
           handleError();
           signIn(data.email, data.password);
         })}
       >
-        <h3>Sign in</h3>
-        <FloatingLabel controlId="floatingInput" label="Enter email" className="mb-3">
+        <h1>
+          Log in to account<span>.</span>
+        </h1>
+        <br />
+        <FloatingLabel controlId="floatingInput" label="Email Address" className="mb-3">
           <Form.Control
-            className="login-input"
+            className="auth-input"
             {...register("email", loginOptions.email)}
             type="email"
             placeholder=" "
           />
           <small className="text-error">{errors?.email && errors.email.message}</small>
         </FloatingLabel>
-        <FloatingLabel controlId="floatingPassword" label="Enter Password">
+        <FloatingLabel controlId="floatingPassword" label="Password">
           <Form.Control
-            className="login-input"
+            className="auth-input"
             {...register("password", loginOptions.password)}
             type="password"
             placeholder=" "
           />
           <small className="text-error">{errors?.password && errors.password.message}</small>
         </FloatingLabel>
-        <Button type="submit" className="login-button">
-          Sign in
-        </Button>
+        <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
+          {message === "" ? <p> </p> : <p>{message}</p>}
+          <Button variant="primary" type="submit" className="auth-button">
+            Log in
+          </Button>
+        </Form.Group>
+        <Form.Text className="text-muted">Do not have an account? </Form.Text>
+        <Form.Text className="text-primary" as={Link} to="/register">
+          <b>Sign up</b>
+        </Form.Text>
       </Form>
-      {alertVisibility ? (
-        <Alert className="alert-message">
-          <p>{message}</p>
-          <Button onClick={() => setAlertVisibility(false)}>Close</Button>
-        </Alert>
-      ) : (
-        ""
-      )}
     </div>
   );
 };
