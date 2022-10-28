@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import axios from "axios";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./Navbar.css";
-import { useEffect } from "react";
 
 function Navabr() {
 
@@ -38,8 +37,8 @@ function Navabr() {
                   <Nav.Link as={Link} to="/">Home</Nav.Link>
                   <Nav.Link as={Link} to="/games">Games</Nav.Link>
                   <NavDropdown title={navbarDropdownTitle} id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Account Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
+                    <NavDropdown.Item as={Link} to="/account">Account Settings</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/financial">
                       Buy dollars
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
