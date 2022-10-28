@@ -136,7 +136,7 @@ function RegisterPage() {
           <small className="text-error">{errors?.age && errors.age.message}</small>
         </FloatingLabel>
         <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
-          {message === "" ? <p></p> : <p>{message}</p>}
+          {message === "" ? <p> </p> : <p>{message}</p>}
           <Button variant="primary" type="submit" className="auth-button">
             Create
           </Button>
