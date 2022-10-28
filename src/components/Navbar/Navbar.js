@@ -35,7 +35,8 @@ function Navabr() {
                 <Nav className="me-auto">
                   <Nav.Link as={Link} to="/">Home</Nav.Link>
                   <Nav.Link as={Link} to="/games">Games</Nav.Link>
-                  <NavDropdown title={navbarDropdownTitle} id="basic-nav-dropdown">
+                </Nav>
+                <NavDropdown title={navbarDropdownTitle} id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/account">Account Settings</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/financial">
                       Buy credits
@@ -45,8 +46,8 @@ function Navabr() {
                       Logout
                     </NavDropdown.Item>
                   </NavDropdown>
-                </Nav>
               </Navbar.Collapse>
+              
             </Container>
         </Navbar>
      ) : (

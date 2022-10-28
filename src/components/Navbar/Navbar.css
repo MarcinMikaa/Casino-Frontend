@@ -20,10 +20,14 @@
     width: auto;
 }
 
-.navbar-collapse .navbar-nav{
-    width: 90%;
+.navbar-collapse {
+    justify-content: space-between;
 }
 
 .navbar-collapse .navbar-nav .nav-item{
     margin-left: auto;
+}
+
+.navbar-collapse .dropdown .dropdown-menu{
+    left: -55px;
 }
