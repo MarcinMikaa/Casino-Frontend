@@ -37,6 +37,7 @@ const LoginPage = () => {
         setMessage(res.data);
         setAlertVisibility(true);
       } else {
+        localStorage.setItem("user", JSON.stringify(res.data));
         navigate("/");
       }
     });
