@@ -1,33 +1,33 @@
-#avatar{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 100px;
-    color: white;
-    background-color: white;
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 100px;
+  color: white;
+  background-color: white;
 }
 
-#user-avatar{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
+#user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
 }
 
-.navbar-nav .nav-link{
-    display: flex;
-    align-items: center;
-    width: auto;
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  width: auto;
 }
 
 .navbar-collapse {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.navbar-collapse .navbar-nav .nav-item{
-    margin-left: auto;
+.navbar-collapse .navbar-nav .nav-item {
+  margin-left: auto;
 }
 
-.navbar-collapse .dropdown .dropdown-menu{
-    left: -55px;
+.navbar-collapse .dropdown .dropdown-menu {
+  left: -55px;
 }

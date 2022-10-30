@@ -9,6 +9,8 @@ import AccountSettingPage from "./components/pages/AccountSettingPage/AccountSet
 import FinancialPage from "./components/pages/FinancialPage/FinancialPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Roulette from "./components/pages/RoulettePage/Roulette";
+
 function App() {
   return (
     <Router>
@@ -16,7 +18,7 @@ function App() {
         <Navabr />
         <Routes>
           <Route path="/" exect={true} element={<MainPage />} />
-          <Route path="/games" element={<GamesPage />} />
+          <Route path="/games" element={<Roulette />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/account" element={<AccountSettingPage />} />

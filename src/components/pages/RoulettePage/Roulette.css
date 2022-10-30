@@ -1,0 +1,24 @@
+.roulette-game-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.roulette-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-bdfBwQ {
+  display: none;
+}
+
+.roulette-result {
+  margin: 0;
+  position: absolute;
+  color: white;
+  padding: 40px;
+  border-radius: 50%;
+  background-color: #01431e;
+}
