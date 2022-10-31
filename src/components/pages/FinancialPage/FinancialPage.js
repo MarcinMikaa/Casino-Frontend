@@ -1,27 +1,23 @@
-import axios from "axios"
+import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const FinancialPage = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:4000/user/me",
+    }).then((res) => {
+      if (!res.data.email) {
+        navigate("/");
+      }
+    });
+  }, []);
 
-    useEffect(() => {
-        axios({
-          method: 'GET',
-          withCredentials: true,
-          url: "http://localhost:4000/user/me"
-        }).then((res) => {
-            if(!res.data.email){
-                navigate("/");
-            }
-        })
-      }, []);
-
-    return(
-        <p>AccountSettingPage</p>
-    )
-
-}
+  return <p>AccountSettingPage</p>;
+};
 
 export default FinancialPage;

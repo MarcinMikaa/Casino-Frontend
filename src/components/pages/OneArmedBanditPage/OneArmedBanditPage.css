@@ -1,0 +1,8 @@
+.slot-machine,
+.slot-machine * {
+  box-sizing: initial;
+}
+
+.slot-machine ul {
+  padding-left: 40px;
+}
