@@ -2,7 +2,7 @@ import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./RouletteForm.css";
 
-const RouletteForm = ({ spin }) => {
+const RouletteForm = ({ spin, message }) => {
   const {
     register,
     handleSubmit,
@@ -16,6 +16,7 @@ const RouletteForm = ({ spin }) => {
   const rouletteOptions = {
     bet: {
       required: "Bet is required",
+      min: { value: 10, message: "Minimum amount of credits to bet is 10" },
       type: "number",
     },
     choseYourNumber: {
@@ -38,7 +39,7 @@ const RouletteForm = ({ spin }) => {
         })}
       >
         <h1>
-          Set your bet<span>.</span>
+          Set your bet
         </h1>
         <br />
         <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3">
@@ -60,6 +61,7 @@ const RouletteForm = ({ spin }) => {
           <small className="text-error">{errors?.choseYourNumber && errors.choseYourNumber.message}</small>
         </FloatingLabel>
         <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
+        {message === "" ? <p> </p> : <p>{message}</p>}
           <Button type="submit" variant="danger">
             Play
           </Button>

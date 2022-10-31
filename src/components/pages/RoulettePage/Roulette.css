@@ -8,17 +8,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .sc-bdfBwQ {
   display: none;
 }
 
-.roulette-result {
+.roulette-result-info {
   margin: 0;
-  position: absolute;
-  color: white;
-  padding: 40px;
-  border-radius: 50%;
-  background-color: #01431e;
+  padding: 10px 0 10px;
+  color: #e0080b;
 }
