@@ -29,6 +29,8 @@ const Roulette = () => {
   }, []);
 
   const spinAWheel = (bet, chosenNumber) => {
+    setSuccessSpinMessage("");
+    setNegativeMessage("git ");
     axios({
       method: "POST",
       data: {
@@ -39,7 +41,7 @@ const Roulette = () => {
       withCredentials: true,
       url: "http://localhost:4000/game/roulette",
     }).then((res) => {
-      console.log(res.data)
+      console.log(res.data);
       if (res.data.result === "") {
         setNegativeMessage(res.data.message);
       } else {
