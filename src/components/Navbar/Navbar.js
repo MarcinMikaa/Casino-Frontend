@@ -34,9 +34,15 @@ function Navabr() {
                 <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/games">
-                  Games
-                </Nav.Link>
+                <NavDropdown title="Games" id="basic-nav-dropdown">
+                  <NavDropdown.Item as={Link} to="/roulette">
+                    Roulette
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="#">
+                    One armed bandit
+                  </NavDropdown.Item>
+                  
+                </NavDropdown>
               </Nav>
               <NavDropdown title={navbarDropdownTitle} id="basic-nav-dropdown">
                 <NavDropdown.Item as={Link} to="/account">
@@ -59,9 +65,6 @@ function Navabr() {
               <Nav className="me-auto">
                 <Nav.Link as={Link} to="/">
                   Home
-                </Nav.Link>
-                <Nav.Link as={Link} to="/games">
-                  Games
                 </Nav.Link>
                 <Nav.Link as={Link} to="/register">
                   Register

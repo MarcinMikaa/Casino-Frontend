@@ -18,7 +18,7 @@ function App() {
         <Navabr />
         <Routes>
           <Route path="/" exect={true} element={<MainPage />} />
-          <Route path="/games" element={<Roulette />} />
+          <Route path="/roulette" element={<Roulette />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/account" element={<AccountSettingPage />} />
