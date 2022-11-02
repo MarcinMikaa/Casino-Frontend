@@ -38,10 +38,9 @@ function Navabr() {
                   <NavDropdown.Item as={Link} to="/roulette">
                     Roulette
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="#">
+                  <NavDropdown.Item as={Link} to="/one-armed-bandit">
                     One armed bandit
                   </NavDropdown.Item>
-                  
                 </NavDropdown>
               </Nav>
               <NavDropdown title={navbarDropdownTitle} id="basic-nav-dropdown">
