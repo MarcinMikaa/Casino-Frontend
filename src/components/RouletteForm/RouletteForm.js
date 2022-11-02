@@ -23,7 +23,7 @@ const RouletteForm = ({ spin, message }) => {
       required: "You must chose number",
       type: "number",
       min: { value: 0, message: "Minimum value is 0" },
-      max: { value: 20, message: "Max value is 20" },
+      max: { value: 36, message: "Max value is 36" },
     },
   };
 
@@ -37,7 +37,7 @@ const RouletteForm = ({ spin, message }) => {
       >
         <h1>Set your bet</h1>
         <br />
-        <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3">
+        <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3 roulette-label">
           <Form.Control
             className="auth-input"
             {...register("bet", rouletteOptions.bet)}
@@ -46,7 +46,7 @@ const RouletteForm = ({ spin, message }) => {
           />
           <small className="text-error">{errors?.bet && errors.bet.message}</small>
         </FloatingLabel>
-        <FloatingLabel controlId="floatingPassword" label="Chose your number">
+        <FloatingLabel className="roulette-label" controlId="floatingPassword" label="Chose your number">
           <Form.Control
             className="auth-input"
             {...register("choseYourNumber", rouletteOptions.choseYourNumber)}
@@ -57,7 +57,7 @@ const RouletteForm = ({ spin, message }) => {
         </FloatingLabel>
         <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
           {message === "" ? <p> </p> : <p>{message}</p>}
-          <Button type="submit" variant="danger">
+          <Button className="spin-button" type="submit" variant="danger">
             Play
           </Button>
         </Form.Group>

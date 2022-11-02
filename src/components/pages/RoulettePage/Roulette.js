@@ -20,7 +20,7 @@ const Roulette = () => {
       withCredentials: true,
       url: "http://localhost:4000/user/me",
     }).then((res) => {
-      if (!res.data.state) {
+      if (!res.data.userID) {
         navigate("/");
       } else {
         setUSer(res.data);
@@ -34,7 +34,7 @@ const Roulette = () => {
     axios({
       method: "POST",
       data: {
-        id: user.user._id,
+        id: user.userID,
         credits: bet,
         number: chosenNumber,
       },
@@ -68,11 +68,12 @@ const Roulette = () => {
             prizeNumber={result}
             data={data}
             radiusLineColor={"#F3C620"}
-            innerBorderColor={"black"}
-            outerBorderColor={"black"}
+            innerBorderColor={"#F3C620"}
+            outerBorderColor={"#F3C620"}
             innerBorderWidth={8}
             outerBorderWidth={8}
             innerRadius={20}
+            textDistance={80}
           />
 
           {successSpinMessage && (
