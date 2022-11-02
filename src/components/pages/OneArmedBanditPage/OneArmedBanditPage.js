@@ -47,7 +47,6 @@ const OneArmedBanditPage = () => {
     axios({
       method: "POST",
       data: {
-        id: user.userID,
         bet: bet,
       },
       withCredentials: true,
