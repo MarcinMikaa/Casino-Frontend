@@ -1,8 +1,102 @@
-.slot-machine,
-.slot-machine * {
-  box-sizing: initial;
+.one-armed-bandit {
+  display: flex;
+  height: 90%;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.slot-machine ul {
-  padding-left: 40px;
+.bandit-container {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: rgb(27, 27, 27);
+  box-shadow: 0 0 10px rgb(83, 83, 83);
+  border-radius: 20px;
+}
+
+.slot-machine {
+  background-color: rgb(11, 82, 8);
+  box-shadow: 0 0 10px rgb(11, 82, 8);
+  border-radius: 20px;
+  margin: 30px 0 0 0;
+  padding: 5px;
+}
+
+.slots-container {
+  display: flex;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: black;
+}
+
+.slots-container div {
+  margin: 0 5px;
+  box-shadow: inset 0px 11px 8px -10px rgb(0, 0, 0), inset 0px -11px 8px -10px rgb(0, 0, 0);
+}
+.one-armed-bandit .result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  width: 200px;
+  height: 40px;
+  color: white;
+  font-weight: bolder;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 0 10px rgb(16, 16, 16);
+}
+
+.one-armed-bandit .messages-group {
+  background-color: rgb(57, 57, 57);
+  color: white;
+  padding: 10px 0;
+  margin: 0 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px rgb(16, 16, 16);
+}
+
+.one-armed-bandit .messages-group .message-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.one-armed-bandit .result p {
+  margin: 0;
+  padding: 10px;
+  font-size: large;
+}
+
+.one-armed-bandit .message {
+  color: white;
+  margin: 0;
+}
+
+.one-armed-bandit .form-floating {
+  margin: 40px 25px;
+}
+
+.auth-form {
+  padding: 50px;
+  margin-top: 50px;
+  min-height: auto;
+}
+
+.auth-form .btn {
+  background-color: rgba(0, 77, 0, 0.461);
+  border: rgba(0, 77, 0, 0.461);
+  box-shadow: 0 0 4px rgba(0, 77, 0, 0.461);
+}
+
+.auth-form .btn:hover {
+  background-color: rgba(0, 164, 0, 0.461);
+  border: rgba(0, 173, 0, 0.461);
+  box-shadow: 0 0 10px rgba(0, 213, 0, 0.461);
 }

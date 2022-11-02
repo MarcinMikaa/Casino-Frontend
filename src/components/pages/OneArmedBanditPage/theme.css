@@ -1,0 +1,28 @@
+.react-reel__group .react-reel__number {
+  height: 1em;
+  margin: 0 39px;
+  background: linear-gradient(to top, #560000 0%, #f51d1d 70%, #830000 80%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 0.3rem #d33535);
+  box-shadow: none;
+}
+
+.react-reel__reel {
+  height: 1em;
+  display: flex;
+  align-items: flex-end;
+  overflow-y: hidden;
+  border-radius: 10px;
+  /* border: 10px solid purple; */
+  background-color: rgb(255, 255, 255);
+
+  /** CUSTOMISE BELOW */
+  font-size: 8rem;
+  font-weight: bold;
+  line-height: 0.95em; /* adjusted for Lato font */
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  color: white;
+}

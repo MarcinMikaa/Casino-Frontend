@@ -3,14 +3,15 @@
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     25deg,
     hsl(28deg 53% 68%) 0%,
     hsl(28deg 35% 60%) 20%,
     hsl(27deg 23% 49%) 32%,
     hsl(26deg 20% 36%) 47%,
     hsl(233deg 13% 13%) 100%
-  );
+  ); */
+  background-color: #000000;
 }
 
 .auth-page {
