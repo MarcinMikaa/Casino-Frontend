@@ -27,20 +27,15 @@ const RouletteForm = ({ spin, message }) => {
     },
   };
 
-  const handleError = (errors) => {};
-
   return (
     <div className="roulette-form auth-page">
       <Form
         className="roulette-custom auth-form"
         onSubmit={handleSubmit((data) => {
-          handleError();
           spin(betInput, choseNumberInput);
         })}
       >
-        <h1>
-          Set your bet
-        </h1>
+        <h1>Set your bet</h1>
         <br />
         <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3">
           <Form.Control
@@ -61,7 +56,7 @@ const RouletteForm = ({ spin, message }) => {
           <small className="text-error">{errors?.choseYourNumber && errors.choseYourNumber.message}</small>
         </FloatingLabel>
         <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
-        {message === "" ? <p> </p> : <p>{message}</p>}
+          {message === "" ? <p> </p> : <p>{message}</p>}
           <Button type="submit" variant="danger">
             Play
           </Button>

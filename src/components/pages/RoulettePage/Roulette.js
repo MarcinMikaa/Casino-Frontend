@@ -20,7 +20,7 @@ const Roulette = () => {
       withCredentials: true,
       url: "http://localhost:4000/user/me",
     }).then((res) => {
-      if (!res.data.user.email) {
+      if (!res.data.state) {
         navigate("/");
       } else {
         setUSer(res.data);
