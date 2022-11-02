@@ -34,7 +34,6 @@ const Roulette = () => {
     axios({
       method: "POST",
       data: {
-        id: user.userID,
         credits: bet,
         number: chosenNumber,
       },
