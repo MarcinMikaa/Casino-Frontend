@@ -26,11 +26,11 @@ const Roulette = () => {
         setUSer(res.data);
       }
     });
-  }, []);
+  }, [navigate]);
 
   const spinAWheel = (bet, chosenNumber) => {
     setSuccessSpinMessage("");
-    setNegativeMessage("git ");
+    setNegativeMessage("");
     axios({
       method: "POST",
       data: {
@@ -53,29 +53,11 @@ const Roulette = () => {
     setSpinState(false);
   };
 
-  const data = [
-    { option: "0", style: { backgroundColor: "#016D29", textColor: "white" } },
-    { option: "1", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "2", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "3", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "4", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "5", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "6", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "7", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "8", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "9", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "10", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "11", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "12", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "13", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "14", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "15", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "16", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "17", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "18", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-    { option: "19", style: { backgroundColor: "#E0080B", textColor: "white" } },
-    { option: "20", style: { backgroundColor: "#1D1E26", textColor: "white" } },
-  ];
+  const data = new Array(36).fill(true).map((_, index) => ({
+    option: index + 1,
+    style: { backgroundColor: index % 2 ? "#1D1E26" : "#E0080B", textColor: "white" },
+  }));
+  data.unshift({ option: "0", style: { backgroundColor: "#016D29", textColor: "white" } });
 
   return (
     <>
@@ -93,9 +75,7 @@ const Roulette = () => {
             innerRadius={20}
           />
 
-          {successSpinMessage === "" ? (
-            <p> </p>
-          ) : (
+          {successSpinMessage && (
             <p className="roulette-result-info">
               {successSpinMessage} Winning number is {result}
             </p>
