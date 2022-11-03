@@ -28,8 +28,6 @@ const Roulette = () => {
     });
   }, [spinState]);
 
-  console.log(spinState);
-
   const spinAWheel = (bet, chosenNumber, variant) => {
     setSuccessSpinMessage("");
     setNegativeMessage("");
