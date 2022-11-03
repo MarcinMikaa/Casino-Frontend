@@ -1,6 +1,6 @@
 #avatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 100px;
   color: white;
@@ -12,22 +12,108 @@
   height: 40px;
   border-radius: 50%;
   background-color: white;
+  border: 1px solid white;
 }
 
-.navbar-nav .nav-link {
+.account-container {
+  content: "";
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  flex-direction: row;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.account-container p {
+  margin: 0;
+  padding-left: 5px;
+}
+
+.navbar .logo {
+  width: 55px;
+  height: 55px;
+}
+
+.navbar {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  min-height: 9vh;
+  z-index: 2;
+}
+
+.navbar-nav a {
+  display: inline-block;
   width: auto;
+  font-size: 1.4em;
+  font-weight: 200;
+  color: rgb(255, 255, 255);
 }
 
-.navbar-collapse {
-  justify-content: space-between;
+.navbar-nav a:focus {
+  color: white;
 }
 
-.navbar-collapse .navbar-nav .nav-item {
-  margin-left: auto;
+.navbar-nav a:hover {
+  color: white;
+  background-color: black;
 }
 
-.navbar-collapse .dropdown .dropdown-menu {
-  left: -55px;
+.navbar-nav .hover-action::after {
+  color: white;
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #000;
+  transition: width 0.3s;
+  border-bottom: solid 2px white;
+}
+
+.navbar-nav .hover-action:hover::after {
+  width: 100%;
+  border-bottom: solid 3px white;
+  transition: width 0.5s;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: white;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  background-color: white;
+  color: black;
+  font-size: 1.2em;
+}
+
+.navbar-nav .dropdown-menu hr {
+  color: black;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar-nav .dropdown-menu {
+    text-align: left;
+  }
+
+  .navbar-collapse .navbar-nav {
+    margin: auto;
+    text-align: left;
+  }
+
+  .navbar-nav .dropdown-menu {
+    background-color: black;
+  }
+
+  .navbar-nav .dropdown-menu .dropdown-item {
+    background-color: black;
+    color: white;
+  }
+
+  .navbar-nav .dropdown-menu hr {
+    width: auto;
+    color: white;
+  }
 }

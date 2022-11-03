@@ -2,14 +2,15 @@
   text-align: center;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  font-family: "Trebuchet MS", sans-serif;
   background-color: #1d1e26;
 }
 
 .auth-page {
   width: 100vw;
-  height: 94vh;
+  min-height: 91vh;
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99)), url("./images/auth-background.jpg");
+  overflow-x: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -62,18 +63,18 @@
   padding: 13px 0;
   border-radius: 15px;
   font-size: x-large;
+  font-weight: bold;
   background-color: #bd9471;
   border: 1px solid #bd9471;
   color: rgb(255, 255, 255);
   box-shadow: 0 0 4px #bd9471;
-  font-weight: 500;
   --bs-btn-active-bg: #ac8868;
   --bs-btn-active-border-color: #ac8868;
-  transition: width 0.4s, background-color 0.4s;
+  transition: max-width 0.4s, background-color 0.4s;
 }
 
 .auth-form .btn:hover {
-  width: 55%;
+  max-width: 230px;
   background-color: #ac8868;
   border: 1px solid #ac8868;
   box-shadow: 0 0 8px #ac8868;
@@ -98,6 +99,9 @@
   padding: 15px 0;
   margin: 0;
   color: red;
+}
+.auth-form .submit-group .succesful {
+  color: green;
 }
 
 .auth-form h1 {
