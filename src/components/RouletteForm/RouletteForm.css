@@ -1,6 +1,7 @@
 .roulette-form {
   background-image: none;
   width: 50vw;
+  height: auto;
 }
 
 .roulette-game-box .roulette-custom {
@@ -30,4 +31,27 @@
   border: 1px solid #016d29;
   box-shadow: 0 0 4px #016d29;
   color: #f3c620;
+}
+
+.option-title {
+  color: #f3c620;
+}
+
+.checkbox-label {
+  color: #016d29;
+  padding: 0px 10px 0px;
+}
+
+.roulette-form-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.game-option{
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: #e0080b;
 }
