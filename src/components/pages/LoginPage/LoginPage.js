@@ -48,6 +48,7 @@ const LoginPage = () => {
     <div className="auth-page">
       <Form
         className="auth-form"
+        autoComplete="off"
         onSubmit={handleSubmit((data) => {
           handleError();
           signIn(data.email, data.password);

@@ -1,0 +1,49 @@
+.card .card-img {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-height: 72vh;
+  box-shadow: inset;
+}
+
+.card .card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .card-img-overlay .card-title {
+  font-size: 3em;
+  font-weight: bolder;
+}
+
+.card .card-img-overlay button {
+  width: 100%;
+  max-width: 200px;
+  padding: 13px 0;
+  border-radius: 15px;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: #bd9471;
+  border: 1px solid #bd9471;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 4px #bd9471;
+  --bs-btn-active-bg: #ac8868;
+  --bs-btn-active-border-color: #ac8868;
+  transition: max-width 0.4s, background-color 0.4s;
+}
+
+.card .card-img-overlay button:hover {
+  max-width: 230px;
+  background-color: #ac8868;
+  border: 1px solid #ac8868;
+  box-shadow: 0 0 8px #ac8868;
+}
+
+.card .card-img-overlay button:active {
+  background-color: #ac8868;
+  border: 1px solid #ac8868;
+  box-shadow: 0 0 8px #ac8868;
+}

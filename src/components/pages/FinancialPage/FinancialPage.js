@@ -11,7 +11,7 @@ const FinancialPage = () => {
       withCredentials: true,
       url: "http://localhost:4000/user/me",
     }).then((res) => {
-      if (!res.data.email) {
+      if (!res.data.userID) {
         navigate("/");
       }
     });

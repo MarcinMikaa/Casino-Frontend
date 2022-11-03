@@ -62,7 +62,7 @@ function RegisterPage() {
 
   return (
     <div className="auth-page">
-      <Form className="auth-form" onSubmit={handleSubmit(onSubmit, handleError)}>
+      <Form className="auth-form" autoComplete="off" onSubmit={handleSubmit(onSubmit, handleError)}>
         <h1>
           Create your account<span>.</span>
         </h1>
