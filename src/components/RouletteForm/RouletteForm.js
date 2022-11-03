@@ -34,8 +34,6 @@ const RouletteForm = ({ spin, message }) => {
     },
   };
 
-  console.log(gameVariant);
-
   return (
     <div className="roulette-form auth-page">
       <Form
@@ -63,11 +61,7 @@ const RouletteForm = ({ spin, message }) => {
             {gameVariant !== "luckyNumber" ? (
               <p> </p>
             ) : (
-              <FloatingLabel
-                controlId="floatingInput"
-                label="Chose your number"
-                className="mb-3 roulette-label"
-              >
+              <FloatingLabel controlId="floatingInput" label="Chose your number" className="mb-3 roulette-label">
                 <Form.Control
                   className="auth-input"
                   {...register("choseYourNumber", rouletteOptions.choseYourNumber)}

@@ -26,7 +26,9 @@ const Roulette = () => {
         setUSer(res.data);
       }
     });
-  }, [navigate]);
+  }, [spinState]);
+
+  console.log(spinState);
 
   const spinAWheel = (bet, chosenNumber, variant) => {
     setSuccessSpinMessage("");
@@ -78,7 +80,7 @@ const Roulette = () => {
 
           {successSpinMessage && (
             <p className="roulette-result-info">
-              {successSpinMessage} Winning number is {result}
+              {successSpinMessage} Winning number is {result}, now you have {user.state}$
             </p>
           )}
         </div>

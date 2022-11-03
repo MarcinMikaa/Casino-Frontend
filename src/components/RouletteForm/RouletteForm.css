@@ -1,6 +1,7 @@
 .roulette-form {
   background-image: none;
   width: 50vw;
+  height: auto;
 }
 
 .roulette-game-box .roulette-custom {
@@ -44,10 +45,11 @@
 .roulette-form-row {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 
-.roulette-form-col {
-  width: 45%;
+.game-option{
+  margin-bottom: 10px;
 }
 
 .error-message {
