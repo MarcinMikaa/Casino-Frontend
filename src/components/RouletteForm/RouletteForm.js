@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./RouletteForm.css";
 
 const RouletteForm = ({ spin, message }) => {
+  const [gameVariant, setGameVariant] = useState("");
+
+  const typeOfGame = (event) => {
+    setGameVariant(event.target.value);
+  };
+
   const {
     register,
     handleSubmit,
@@ -32,35 +39,55 @@ const RouletteForm = ({ spin, message }) => {
       <Form
         className="roulette-custom auth-form"
         onSubmit={handleSubmit((data) => {
-          spin(betInput, choseNumberInput);
+          spin(betInput, choseNumberInput, gameVariant);
         })}
       >
         <h1>Set your bet</h1>
         <br />
-        <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3 roulette-label">
-          <Form.Control
-            className="auth-input"
-            {...register("bet", rouletteOptions.bet)}
-            type="number"
-            placeholder=" "
-          />
-          <small className="text-error">{errors?.bet && errors.bet.message}</small>
-        </FloatingLabel>
-        <FloatingLabel className="roulette-label" controlId="floatingPassword" label="Chose your number">
-          <Form.Control
-            className="auth-input"
-            {...register("choseYourNumber", rouletteOptions.choseYourNumber)}
-            type="number"
-            placeholder=" "
-          />
-          <small className="text-error">{errors?.choseYourNumber && errors.choseYourNumber.message}</small>
-        </FloatingLabel>
-        <Form.Group className="mb-3 submit-group" controlId="formGroupSubmit">
-          {message === "" ? <p> </p> : <p>{message}</p>}
-          <Button className="spin-button" type="submit" variant="danger">
-            Play
-          </Button>
-        </Form.Group>
+        <div className="roulette-form-row">
+          <div className="roulette-form-col">
+            <div className="game-option">
+              <select onChange={typeOfGame}>
+                <option value="">Chose variant of game</option>
+                <option value="red">Red</option>
+                <option value="black">Black</option>
+                <option value="odd">Odd</option>
+                <option value="even">Even</option>
+                <option value="gt18">Gt 18</option>
+                <option value="lt19">Lt 19</option>
+                <option value="luckyNumber">Lucky Number</option>
+              </select>
+            </div>
+            {gameVariant !== "luckyNumber" ? (
+              <p> </p>
+            ) : (
+              <FloatingLabel controlId="floatingInput" label="Chose your number" className="mb-3 roulette-label">
+                <Form.Control
+                  className="auth-input"
+                  {...register("choseYourNumber", rouletteOptions.choseYourNumber)}
+                  type="number"
+                  placeholder=" "
+                />
+                <small className="text-error">{errors?.choseYourNumber && errors.choseYourNumber.message}</small>
+              </FloatingLabel>
+            )}
+          </div>
+          <div className="roulette-form-col">
+            <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3 roulette-label">
+              <Form.Control
+                className="auth-input"
+                {...register("bet", rouletteOptions.bet)}
+                type="number"
+                placeholder=" "
+              />
+              <small className="text-error">{errors?.bet && errors.bet.message}</small>
+            </FloatingLabel>
+            <Button className="spin-button" type="submit" variant="danger">
+              Play
+            </Button>
+          </div>
+        </div>
+        {message === "" ? <p> </p> : <p className="error-message">{message}</p>}
       </Form>
     </div>
   );
