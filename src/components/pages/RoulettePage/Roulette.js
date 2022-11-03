@@ -28,7 +28,7 @@ const Roulette = () => {
     });
   }, [navigate]);
 
-  const spinAWheel = (bet, chosenNumber) => {
+  const spinAWheel = (bet, chosenNumber, variant) => {
     setSuccessSpinMessage("");
     setNegativeMessage("");
     axios({
@@ -36,6 +36,7 @@ const Roulette = () => {
       data: {
         credits: bet,
         number: chosenNumber,
+        variant: variant,
       },
       withCredentials: true,
       url: "http://localhost:4000/game/roulette",

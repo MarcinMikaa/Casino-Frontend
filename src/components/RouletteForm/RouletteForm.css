@@ -31,3 +31,25 @@
   box-shadow: 0 0 4px #016d29;
   color: #f3c620;
 }
+
+.option-title {
+  color: #f3c620;
+}
+
+.checkbox-label {
+  color: #016d29;
+  padding: 0px 10px 0px;
+}
+
+.roulette-form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.roulette-form-col {
+  width: 45%;
+}
+
+.error-message {
+  color: #e0080b;
+}
