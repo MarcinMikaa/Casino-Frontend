@@ -4,6 +4,10 @@
   height: auto;
 }
 
+.roulette-custom {
+  margin-top: 0;
+}
+
 .roulette-game-box .roulette-custom {
   background-color: #1d1e26;
   border: 2px solid #e0080b;
@@ -48,7 +52,7 @@
   flex-direction: column;
 }
 
-.game-option{
+.game-option {
   margin-bottom: 10px;
 }
 
