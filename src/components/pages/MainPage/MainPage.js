@@ -1,5 +1,6 @@
 import "./MainPage.css";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function MainPage() {
   return (
@@ -14,7 +15,7 @@ function MainPage() {
             CREATE AN ACCOUNT AND <br /> GET FREE 500$
           </Card.Title>
 
-          <Button variant="primary" type="submit" className="auth-button">
+          <Button variant="primary" type="submit" className="auth-button" as={Link} to="/register">
             Join now
           </Button>
         </Card.ImgOverlay>

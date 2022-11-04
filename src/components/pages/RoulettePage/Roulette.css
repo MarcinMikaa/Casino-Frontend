@@ -1,9 +1,18 @@
 .roulette-game-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   flex-direction: column;
   padding-top: 50px;
+  margin: auto;
+  margin-top: 25px;
+  padding-bottom: 50px;
+  background-color: black;
+  width: 70vw;
+  background-color: rgb(27, 27, 27);
+  box-shadow: 0 0 10px rgb(83, 83, 83);
+  border-radius: 20px;
 }
 
 .roulette-container {
@@ -20,5 +29,5 @@
 .roulette-result-info {
   margin: 0;
   padding: 10px 0 10px;
-  color: #e0080b;
+  color: #09b400;
 }

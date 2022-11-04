@@ -9,36 +9,10 @@
 }
 
 .roulette-game-box .roulette-custom {
-  background-color: #1d1e26;
-  border: 2px solid #e0080b;
-  -webkit-box-shadow: 0px 0px 50px -7px rgba(224, 8, 11, 1);
-  -moz-box-shadow: 0px 0px 50px -7px rgba(224, 8, 11, 1);
-  box-shadow: 0px 0px 50px -7px rgba(224, 8, 11, 1);
-}
-
-.roulette-game-box .roulette-label {
-  color: #f3c620;
-}
-
-.roulette-game-box .spin-button {
-  background-color: #016d29;
-  border: 1px solid #016d29;
-  box-shadow: 0 0 4px #016d29;
-  font-weight: 500;
-  --bs-btn-active-bg: #01431e;
-  --bs-btn-active-border-color: #01431e;
-  transition: width 0.4s, background-color 0.4s;
-}
-
-.roulette-game-box .spin-button:hover {
-  background-color: #01431e;
-  border: 1px solid #016d29;
-  box-shadow: 0 0 4px #016d29;
-  color: #f3c620;
-}
-
-.option-title {
-  color: #f3c620;
+  border: 2px solid #00c400;
+  -webkit-box-shadow: 0px 0px 50px -7px #00c400;
+  -moz-box-shadow: 0px 0px 50px -7px #00c400;
+  box-shadow: 0px 0px 20px -7px #00c400;
 }
 
 .checkbox-label {
@@ -58,4 +32,57 @@
 
 .error-message {
   color: #e0080b;
+}
+
+.roulette-form .messages-group {
+  background-color: rgb(57, 57, 57);
+  color: white;
+  padding: 10px 0;
+  margin: 0 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px rgb(16, 16, 16);
+}
+
+.roulette-form .messages-group .message-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.roulette-form .result p {
+  margin: 0;
+  padding: 10px;
+  font-size: large;
+}
+
+.roulette-form .message {
+  color: white;
+  margin: 0;
+}
+
+.one-armed-bandit .form-floating {
+  margin: 40px 25px;
+}
+
+.auth-form {
+  padding: 50px;
+  margin-top: 50px;
+  min-height: auto;
+}
+
+.roulette-form {
+  min-height: 60vh;
+}
+
+.roulette-form .game-option select {
+  width: 100%;
+  background-color: rgb(44, 44, 44);
+  color: #d9ac84;
+  border-radius: 10px;
+  padding: 18px;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+.roulette-form .auth-form h1 {
+  padding-bottom: 20px;
 }

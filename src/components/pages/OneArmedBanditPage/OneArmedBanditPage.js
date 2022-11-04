@@ -77,6 +77,7 @@ const OneArmedBanditPage = () => {
         <div className="result">{message && <p className="result">{message}</p>}</div>
 
         <Form className="auth-form" onSubmit={handleSubmit(onSubmit, handleError)}>
+          <h1>Pick your bet</h1>
           <Row className="g-2">
             <Col>
               <Form.Group className="messages-group">

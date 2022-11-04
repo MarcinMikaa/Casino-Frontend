@@ -37,7 +37,7 @@ const LoginPage = () => {
         setMessage(res.data);
       } else {
         localStorage.setItem("user", JSON.stringify(res.data));
-        navigate("/");
+        navigate("/roulette");
       }
     });
   };
