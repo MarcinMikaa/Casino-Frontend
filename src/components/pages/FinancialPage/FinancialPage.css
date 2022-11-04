@@ -1,0 +1,36 @@
+.financial-row {
+  padding: 15px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.financial-col {
+  width: 30%;
+}
+
+.financial-tile {
+  padding: 40px 50px 40px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(1, 109, 41, 1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(1, 109, 41, 1);
+  box-shadow: 0px 0px 10px 0px rgba(1, 109, 41, 1);
+  color: #f3c620;
+}
+
+.financial-tile .credits-input {
+  background-color: rgb(44, 44, 44);
+  color: #f3c620;
+}
+
+.financial-tile .credits-input:focus {
+  background-color: rgb(44, 44, 44);
+  box-shadow: none;
+  border-color: white;
+  color: #f3c620;
+}
+
+.success-message {
+  padding: 30px 0 0;
+  font-size: 20px;
+  color: #016d29;
+}
