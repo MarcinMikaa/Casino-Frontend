@@ -60,7 +60,7 @@ const AccountSettingPage = () => {
       <div className="account-setting">
         <Form className="auth-form" onSubmit={handleSubmit(onSubmit, handleError)}>
           <h1>
-            Do you wanna change your password<span>?</span>
+            Do you want change your password<span>?</span>
           </h1>
           <br />
 

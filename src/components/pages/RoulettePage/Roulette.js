@@ -12,7 +12,8 @@ const Roulette = () => {
   const [result, setResult] = useState(0);
   const [successSpinMessage, setSuccessSpinMessage] = useState("");
   const [negativeMessage, setNegativeMessage] = useState("");
-  const [user, setUSer] = useState();
+  const [user, setUSer] = useState([]);
+  const [balance, setBalance] = useState("");
 
   useEffect(() => {
     axios({
@@ -26,9 +27,7 @@ const Roulette = () => {
         setUSer(res.data);
       }
     });
-  }, [spinState]);
-
-  console.log(spinState);
+  }, [user]);
 
   const spinAWheel = (bet, chosenNumber, variant) => {
     setSuccessSpinMessage("");
@@ -43,12 +42,12 @@ const Roulette = () => {
       withCredentials: true,
       url: "http://localhost:4000/game/roulette",
     }).then((res) => {
-      console.log(res.data);
       if (res.data.result === "") {
         setNegativeMessage(res.data.message);
       } else {
         setSuccessSpinMessage(res.data.message);
         setResult(res.data.result);
+        setBalance(res.data.balance);
         setSpinState(true);
       }
     });
@@ -80,11 +79,11 @@ const Roulette = () => {
 
           {successSpinMessage && (
             <p className="roulette-result-info">
-              {successSpinMessage} Winning number is {result}, now you have {user.state}$
+              {successSpinMessage}. Winning number is {result}
             </p>
           )}
         </div>
-        <RouletteForm message={negativeMessage} spin={spinAWheel} />
+        <RouletteForm message={negativeMessage} spin={spinAWheel} balance={balance} user={user} />
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Container, Nav, Navbar, NavDropdown, Dropdown, Image } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown, Image } from "react-bootstrap";
 import axios from "axios";
 import logo from "../../images/logo.png";
 
@@ -38,9 +38,6 @@ function Navabr() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/" className="hover-action">
-                  Home
-                </Nav.Link>
                 <NavDropdown title="Games ⇩" id="basic-nav-dropdown">
                   <NavDropdown.Item as={Link} to="/roulette">
                     Roulette

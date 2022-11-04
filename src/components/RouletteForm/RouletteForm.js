@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { Form, Button, FloatingLabel } from "react-bootstrap";
+import { useReducer, useState } from "react";
+import { Form, Button, FloatingLabel, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+
 import "./RouletteForm.css";
 
-const RouletteForm = ({ spin, message }) => {
+const RouletteForm = ({ spin, message, balance, user }) => {
   const [gameVariant, setGameVariant] = useState("");
 
   const typeOfGame = (event) => {
@@ -42,12 +43,27 @@ const RouletteForm = ({ spin, message }) => {
           spin(betInput, choseNumberInput, gameVariant);
         })}
       >
-        <h1>Set your bet</h1>
+        <h1>Pick your bet</h1>
+        <Row className="g-2">
+          <Col>
+            <Form.Group className="messages-group">
+              <p className="message-title">Actual bet</p>
+              {betInput === "" ? <p className="message">0$</p> : <p className="message">{betInput}$</p>}
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group className="messages-group">
+              <p className="message-title">Your balance</p>
+              {balance === "" ? <p className="message">{user.state}$</p> : <p className="message">{balance}$</p>}
+            </Form.Group>
+          </Col>
+        </Row>
+
         <br />
         <div className="roulette-form-row">
           <div className="roulette-form-col">
             <div className="game-option">
-              <select onChange={typeOfGame}>
+              <select onChange={typeOfGame} className="varinat-select">
                 <option value="">Chose variant of game</option>
                 <option value="red">Red</option>
                 <option value="black">Black</option>
@@ -73,7 +89,7 @@ const RouletteForm = ({ spin, message }) => {
             )}
           </div>
           <div className="roulette-form-col">
-            <FloatingLabel controlId="floatingInput" label="How much you want to bet?" className="mb-3 roulette-label">
+            <FloatingLabel controlId="floatingInput" label="Bet" className="mb-3 roulette-label">
               <Form.Control
                 className="auth-input"
                 {...register("bet", rouletteOptions.bet)}

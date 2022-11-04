@@ -2,7 +2,7 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
-  max-height: 72vh;
+  max-height: 90vh;
   box-shadow: inset;
 }
 
@@ -19,7 +19,7 @@
   font-weight: bolder;
 }
 
-.card .card-img-overlay button {
+.card .card-img-overlay .btn {
   width: 100%;
   max-width: 200px;
   padding: 13px 0;
@@ -35,14 +35,14 @@
   transition: max-width 0.4s, background-color 0.4s;
 }
 
-.card .card-img-overlay button:hover {
+.card .card-img-overlay .btn:hover {
   max-width: 230px;
   background-color: #ac8868;
   border: 1px solid #ac8868;
   box-shadow: 0 0 8px #ac8868;
 }
 
-.card .card-img-overlay button:active {
+.card .card-img-overlay .btn:active {
   background-color: #ac8868;
   border: 1px solid #ac8868;
   box-shadow: 0 0 8px #ac8868;
