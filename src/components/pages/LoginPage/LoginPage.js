@@ -33,7 +33,7 @@ const LoginPage = () => {
       url: "http://localhost:4000/user/login",
     }).then((res) => {
       setMessage(res.data);
-      if (res.data === "No User Exist") {
+      if (res.data === "The email address or password is incorrect") {
         setMessage(res.data);
       } else {
         localStorage.setItem("user", JSON.stringify(res.data));
